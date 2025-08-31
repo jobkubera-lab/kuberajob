@@ -1,29 +1,164 @@
-<!-- redeploy test -->
 <!doctype html>
 <html lang="ru">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>KuberaJob — Миграция, Визы, Трудоустройство</title>
-  <meta name="description" content="KuberaJob — сопровождаем миграцию и трудоустройство: визы, разрешения на работу, проверка вакансий, контрактов и документов. Работаем прозрачно и юридически корректно." />
-  <meta name="theme-color" content="#0f172a" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KuberaJob — визы, ВНЖ и работа в Европе</title>
+  <meta name="description" content="KuberaJob — сопровождаем оформление виз, ВНЖ и трудоустройство в Европе и Евросоюзе. Проверка работодателя, подготовка документов, запись в визовый центр и пост-релокация." />
+  <meta name="theme-color" content="#0b1b3a" />
+  <meta property="og:title" content="KuberaJob — визы, ВНЖ и работа в Европе" />
+  <meta property="og:description" content="Юридически корректное сопровождение: рабочие визы, ВНЖ, проверка контрактов, сопровождение после въезда." />
+  <meta property="og:type" content="website" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <style>
-    /* стили оставляем без изменений, они уже готовы */
+    :root{
+      /* ПАЛИТРА: синий + тёмно-синий + золото */
+      --bg-900:#0b1b3a;      /* тёмно-синий фон */
+      --bg-800:#0f234a;      /* чуть светлее для градиента */
+      --card:#0e1f42;        /* карточки */
+      --muted:#9fb0d0;       /* вторичный текст */
+      --text:#eef3ff;        /* основной текст */
+      --white:#ffffff;
+      --brand:#ffbb33;       /* золото (основной акцент) */
+      --brand-2:#ffd166;     /* светлое золото для бликов */
+      --accent:#2a66ff;      /* кнопка CTA */
+      --accent-2:#1745c3;    /* hover CTA */
+      --ok:#2fbf71;          /* телефон */
+      --danger:#ea4335;      /* email */
+      --tg:#229ed9;          /* telegram */
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --border:1px solid rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(42,102,255,.15), transparent 60%),
+        radial-gradient(900px 500px at -10% 20%, rgba(255,187,51,.12), transparent 60%),
+        linear-gradient(180deg, var(--bg-900), var(--bg-800));
+      color:var(--text);
+      line-height:1.65;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:var(--text);text-decoration:none}
+    .container{max-width:1160px;margin:0 auto;padding:0 20px}
+
+    /* Кнопки */
+    .btn{
+      display:inline-flex;align-items:center;gap:10px;
+      padding:12px 18px;border-radius:999px;
+      background:var(--accent);color:var(--white);
+      font-weight:700;border:none;box-shadow:var(--shadow);
+      transition:transform .18s ease, box-shadow .18s ease, background .18s ease, opacity .18s ease;
+      will-change:transform;
+    }
+    .btn:hover{transform:translateY(-2px);background:var(--accent-2)}
+    .btn.secondary{background:transparent;border:var(--border);color:var(--text);font-weight:600}
+    .btn.secondary:hover{background:rgba(255,255,255,.06)}
+
+    /* Хедер */
+    header{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:saturate(1.4) blur(10px);
+      background:linear-gradient(to bottom, rgba(10,18,40,.86), rgba(10,18,40,.45));
+      border-bottom:var(--border);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .logo-badge{
+      width:36px;height:36px;border-radius:10px;
+      background:conic-gradient(from 210deg, var(--brand), var(--brand-2), var(--brand));
+      box-shadow:0 6px 18px rgba(255,187,51,.35), inset 0 0 10px rgba(255,255,255,.25);
+    }
+    .menu a{margin-left:20px;color:var(--muted);font-weight:600}
+    .menu a:hover{color:var(--white)}
+
+    /* HERO */
+
+Varanasi Om, [31.08.2025 12:35]
+.hero{padding:92px 0 56px}
+    .hero-grid{display:grid;grid-template-columns:1.2fr .9fr;gap:40px;align-items:center}
+    .tag{display:inline-block;padding:6px 12px;border-radius:999px;border:var(--border);color:var(--muted);font-size:13px;margin-bottom:12px}
+    .title{font-size:46px;line-height:1.12;margin:6px 0 12px;font-weight:800}
+    .title .gold{color:var(--brand)}
+    .subtitle{color:var(--muted);max-width:700px;margin-bottom:24px}
+    .hero-card{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:var(--border);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)
+    }
+    .hero-list{margin:0;padding:0 0 0 18px}
+    .hero-list li{margin:8px 0}
+
+    /* Секции */
+    section{padding:60px 0}
+    h2{font-size:30px;margin:0 0 22px;font-weight:800}
+    .grid{display:grid;gap:18px}
+    .col-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .card{
+      background:var(--card);border:var(--border);border-radius:var(--radius);padding:22px;
+      box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease
+    }
+    .card:hover{transform:translateY(-4px)}
+    .muted{color:var(--muted)}
+
+    /* CTA блоки */
+    .cta{
+      background:linear-gradient(135deg, rgba(42,102,255,.20), rgba(255,187,51,.14));
+      border:var(--border);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)
+    }
+
+    /* Футер */
+    footer{padding:38px 0;color:var(--muted);border-top:var(--border)}
+
+    /* FAB */
+    .fab-wrap{position:fixed;right:18px;bottom:18px;display:flex;flex-direction:column;gap:12px;z-index:1000}
+    .fab{
+      width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+      box-shadow:var(--shadow);transition:transform .15s ease, opacity .15s ease
+    }
+    .fab:hover{transform:translateY(-2px)}
+    .fab svg{width:26px;height:26px;filter:drop-shadow(0 4px 8px rgba(0,0,0,.35))}
+    .fab.tg{background:var(--tg)}
+    .fab.mail{background:var(--danger)}
+    .fab.tel{background:var(--ok)}
+
+    /* Адаптив */
+    @media (max-width:960px){
+      .hero-grid{grid-template-columns:1fr}
+      .title{font-size:36px}
+      .col-3{grid-template-columns:1fr}
+      .menu{display:none}
+    }
   </style>
+
+  <script>
+    // Плавная прокрутка по якорям
+    addEventListener('click', e=>{
+      const a=e.target.closest('a[href^="#"]'); if(!a) return;
+      const el=document.querySelector(a.getAttribute('href')); if(el){e.preventDefault(); el.scrollIntoView({behavior:'smooth', block:'start'})}
+    });
+  </script>
 </head>
+
 <body>
+  <!-- HEADER -->
   <header>
     <div class="container nav">
       <div class="logo">
         <div class="logo-badge" aria-hidden="true"></div>
-        Kubera<span style="color:var(--brand)">Job</span>
+        Kubera<span class="gold" style="color:var(--brand)">Job</span>
       </div>
       <nav class="menu">
         <a href="#services">Услуги</a>
         <a href="#countries">Страны</a>
         <a href="#pricing">Тарифы</a>
+        <a href="#faq">FAQ</a>
         <a href="#contact">Контакты</a>
       </nav>
     </div>
@@ -35,15 +170,17 @@
       <div class="hero-grid">
         <div>
           <div class="tag">Юридически корректное сопровождение</div>
-          <h1 class="title">Миграция, визы и трудоустройство — <span style="color:var(--brand)">под ключ</span></h1>
+          <h1 class="title">Миграция, визы и трудоустройство — <span class="gold">под ключ</span></h1>
           <p class="subtitle">Помогаем легально трудоустроиться в Европе и Евросоюзе. Проверяем работодателей и контракты, готовим документы и сопровождаем на каждом этапе. Прозрачно и легально.</p>
           <div style="display:flex;gap:12px;flex-wrap:wrap">
             <a class="btn" href="https://t.me/kuberababa" target="_blank" rel="noopener">Написать в Telegram</a>
-            <a class="btn secondary" href="#contact">Оставить заявку</a>
+            <a class="btn secondary" href="#lead">Оставить заявку</a>
           </div>
-          <div style="margin-top:20px" class="muted">Связь: @kuberababa · jobkubera@gmail.com · +354 883 1950</div>
+          <div style="margin-top:18px" class="muted">Связь: @kuberababa · jobkubera@gmail.com · +354 883 1950</div>
         </div>
-        <div class="hero-card">
+
+Varanasi Om, [31.08.2025 12:35]
+<div class="hero-card">
           <h3 style="margin:0 0 10px">Что вы получаете</h3>
           <ul class="hero-list">
             <li>Проверка вакансии и работодателя (due diligence)</li>
@@ -56,16 +193,248 @@
       </div>
     </section>
 
-    <!-- остальные блоки (услуги, страны, тарифы, процесс, отзывы, FAQ, контакты) оставляем такими, как я тебе прислал ранее -->
+    <!-- SERVICES -->
+    <section id="services">
+      <h2>Наши услуги</h2>
+      <div class="grid col-3">
+        <div class="card">
+          <h3 style="margin:0 0 8px">Рабочие визы</h3>
+          <p class="muted">Готовим пакет документов, записываем на подачу, готовим к интервью. Чек-листы и контроль сроков.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">ВНЖ и гражданство</h3>
+          <p class="muted">ВНЖ по работе, учёбе, бизнесу и семье. Продления и сопровождение до получения карты.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Проверка работодателя</h3>
+          <p class="muted">Проверяем регистрацию, репутацию, страхование, контракт. Письменное заключение и рекомендации.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Бизнес-релокация</h3>
+          <p class="muted">Открытие компании, налоговые номера, банки. Комплаенс и легальная структура.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Учёба в Европе</h3>
+          <p class="muted">Подбор программы, пакет на студенческую визу, подготовка к собеседованию.</p>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Пост-релокация</h3>
+          <p class="muted">Регистрация, налоговый номер, страховка, банк. Сопровождаем до выхода на работу.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- COUNTRIES -->
+    <section id="countries">
+      <h2>Страны и программы</h2>
+      <div class="grid col-3">
+        <div class="card">
+          <h3 style="margin:0 0 8px">Германия 🇩🇪</h3>
+          <ul class="muted" style="margin:0;padding-left:18px">
+            <li>EU Blue Card (IT, инженеры, медики)</li>
+            <li>Рабочая виза по контракту</li>
+            <li>Учебная виза, языковые курсы</li>
+            <li>Воссоединение семьи</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Чехия 🇨🇿</h3>
+          <ul class="muted" style="margin:0;padding-left:18px">
+            <li>Рабочие визы (производство, сервис)</li>
+            <li>ВНЖ предпринимателя</li>
+            <li>Стажировки и обучение</li>
+            <li>Продление статуса</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Польша 🇵🇱</h3>
+          <ul class="muted" style="margin:0;padding-left:18px">
+            <li>Рабочие и сезонные визы</li>
+            <li>Карта побыта (ВНЖ)</li>
+            <li>Проверка работодателей</li>
+            <li>Воссоединение семьи</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Великобритания 🇬🇧</h3>
+          <ul class="muted" style="margin:0;padding-left:18px">
+            <li>Skilled Worker Visa</li>
+            <li>Student Visa</li>
+            <li>Innovator/Startup (бизнес-иммиграция)</li>
+            <li>Sponsorship для работодателей</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Дания 🇩🇰 / Норвегия 🇳🇴</h3>
+          <ul class="muted" style="margin:0;padding-left:18px">
+            <li>Контракты: логистика, производство, сервис</li>
+            <li>ВНЖ для специалистов</li>
+            <li>Страхование и условия работы</li>
+
+Varanasi Om, [31.08.2025 12:35]
+<li>Сезонная занятость</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3 style="margin:0 0 8px">Исландия 🇮🇸</h3>
+          <ul class="muted" style="margin:0;padding-left:18px">
+            <li>Рабочая виза по подтверждённому контракту</li>
+            <li>ВНЖ работника (разрешение от Directorate of Labour)</li>
+            <li>Регистрация: kennitala, страховка, налоговый номер</li>
+            <li>Пост-релокация и выход на работу</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <h2>Тарифы</h2>
+      <div class="grid col-3">
+        <div class="card">
+          <h3 style="margin:0">Базовый</h3>
+          <p class="muted">Диагностика · чек-лист · 30-мин консультация</p>
+          <p style="font-weight:800">от 99 €</p>
+          <a class="btn secondary" href="https://t.me/kuberababa" target="_blank">Задать вопрос</a>
+        </div>
+        <div class="card" style="outline:2px solid rgba(255,187,51,.28)">
+          <h3 style="margin:0">Стандарт</h3>
+          <p class="muted">Полный пакет на визу/ВНЖ · запись · сопровождение до решения</p>
+          <p style="font-weight:800">от 299 €</p>
+          <a class="btn" href="https://t.me/kuberababa" target="_blank">Начать оформление</a>
+        </div>
+        <div class="card">
+          <h3 style="margin:0">Премиум</h3>
+          <p class="muted">Всё из «Стандарта» + пост-релокация (регистрация, НН, страховка, банк)</p>
+          <p style="font-weight:800">от 499 €</p>
+          <a class="btn secondary" href="mailto:jobkubera@gmail.com">Запросить договор</a>
+        </div>
+      </div>
+      <p class="muted" style="margin-top:10px">* Итоговая стоимость зависит от страны, типа визы/ВНЖ и срочности. Перед стартом предоставим фиксированную смету.</p>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process">
+      <h2>Как мы работаем</h2>
+      <div class="grid col-3">
+        <div class="card"><strong>1. Диагностика</strong><p class="muted">15–30 минут: цели, страна, сроки, риски. Даём план и чек-лист.</p></div>
+        <div class="card"><strong>2. Подготовка пакета</strong><p class="muted">Анкеты, приглашения, договор, страховка. Корректный файл без лишнего.</p></div>
+        <div class="card"><strong>3. Проверка работодателя</strong><p class="muted">Due diligence компании и условий, устранение рисков заранее.</p></div>
+        <div class="card"><strong>4. Подача</strong><p class="muted">Записываем в визовый центр, готовим к интервью, подаём документы.</p></div>
+        <div class="card"><strong>5. Решение</strong><p class="muted">Мониторим статус, отвечаем на запросы, получаем визу/ВНЖ.</p></div>
+        <div class="card"><strong>6. После въезда</strong><p class="muted">Регистрация, налоговый номер, банк, страховка. Выход на работу.</p></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials">
+      <h2>Отзывы клиентов</h2>
+      <div class="grid col-3">
+        <div class="card">
+          <p><strong>Ирина, Чехия</strong></p>
+          <p class="muted">«Контракт с завода, проверка условий и пакет на визу. 3 недели — и я уже на работе».</p>
+        </div>
+        <div class="card">
+          <p><strong>Алекс, Германия</strong></p>
+          <p class="muted">«Оформили Blue Card, помогли со страховкой и переездом. Всё чётко и по срокам».</p>
+        </div>
+        <div class="card">
+          <p><strong>Мария, Исландия</strong></p>
+          <p class="muted">«Разрешение от DoL, kennitala, банк и жильё. Пост-релокация спасла кучу времени».</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEAD FORM -->
+    <section id="lead">
+      <div class="cta">
+        <div style="display:flex;gap:18px;flex-wrap:wrap;align-items:center;justify-content:space-between">
+
+Varanasi Om, [31.08.2025 12:35]
+<div>
+            <h3 style="margin:0 0 6px">Бесплатная диагностика вашей ситуации</h3>
+            <div class="muted">15 минут: страна, виза/ВНЖ, сроки и риски. Получите персональный план.</div>
+          </div>
+          <form action="mailto:jobkubera@gmail.com" method="post" enctype="text/plain" style="display:flex;gap:12px;flex-wrap:wrap">
+            <input required name="name" placeholder="Имя" style="padding:12px 14px;border-radius:12px;border:var(--border);background:#0a1838;color:var(--text)">
+            <input required name="contact" placeholder="Телефон или Telegram" style="padding:12px 14px;border-radius:12px;border:var(--border);background:#0a1838;color:var(--text)">
+            <select name="country" style="padding:12px 14px;border-radius:12px;border:var(--border);background:#0a1838;color:var(--text)">
+              <option>Германия</option><option>Чехия</option><option>Польша</option><option>Великобритания</option><option>Дания/Норвегия</option><option>Исландия</option>
+            </select>
+            <button class="btn" type="submit">Получить план</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2>Частые вопросы</h2>
+      <div class="grid">
+        <div class="card">
+          <p><strong>Сколько времени занимает оформление?</strong></p>
+          <p class="muted">В среднем 2–8 недель, зависит от страны, типа визы/ВНЖ и загруженности центров.</p>
+        </div>
+        <div class="card">
+          <p><strong>Можно без знания языка?</strong></p>
+          <p class="muted">По многим вакансиям — да. Базовый английский или язык страны повышает шансы и зарплату.</p>
+        </div>
+        <div class="card">
+          <p><strong>Какие профессии востребованы?</strong></p>
+          <p class="muted">Производство, логистика, пищевка, сервис. В Германии — IT/инженеры/медики (Blue Card).</p>
+        </div>
+        <div class="card">
+          <p><strong>Как проверяете работодателя?</strong></p>
+          <p class="muted">Регистрация, судебные записи, отзывы, страхование, соответствие контракта закону. Даём письменное заключение.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Контакты</h2>
+      <div class="grid" style="grid-template-columns:1.1fr .9fr;gap:18px">
+        <div class="card">
+          <p style="margin:.2rem 0"><strong>Telegram-бот:</strong> <a href="https://t.me/kuberababa" target="_blank">@kuberababa</a></p>
+          <p style="margin:.2rem 0"><strong>Telegram-канал:</strong> <a href="https://t.me/imigrantyemeil" target="_blank">Иммигранты — Kubera Job</a></p>
+          <p style="margin:.2rem 0"><strong>Email:</strong> <a href="mailto:jobkubera@gmail.com">jobkubera@gmail.com</a></p>
+          <p style="margin:.2rem 0"><strong>Телефон:</strong> <a href="tel:+3548831950">+354 883 1950</a></p>
+          <p class="muted" style="margin-top:10px">Отвечаем в рабочие часы, обычно в течение 2–4 часов.</p>
+        </div>
+        <form class="card" action="mailto:jobkubera@gmail.com" method="post" enctype="text/plain">
+          <div style="display:grid;gap:12px">
+            <input required name="name" placeholder="Ваше имя" style="padding:12px 14px;border-radius:12px;border:var(--border);background:#0a1838;color:var(--text)">
+            <input required name="contact" placeholder="Телефон или Telegram" style="padding:12px 14px;border-radius:12px;border:var(--border);background:#0a1838;color:var(--text)">
+            <textarea name="note" rows="4" placeholder="Страна и тип визы/ВНЖ" style="padding:12px 14px;border-radius:12px;border:var(--border);background:#0a1838;color:var(--text)"></textarea>
+            <button class="btn" type="submit">Отправить заявку</button>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
 
+Varanasi Om, [31.08.2025 12:35]
+<!-- FOOTER -->
   <footer>
     <div class="container">
       <div style="display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap">
-        <div class="muted">© KuberaJob, 2025. Все права защищены. Работаем строго в рамках закона и публичной оферты.</div>
+        <div class="muted">© KuberaJob, 2025. Все права защищены.</div>
         <div class="muted"><a href="#services">Услуги</a> · <a href="#pricing">Тарифы</a> · <a href="#contact">Контакты</a></div>
       </div>
     </div>
   </footer>
+
+  <!-- FAB -->
+  <div class="fab-wrap" aria-label="Быстрые контакты">
+    <a class="fab tg" href="https://t.me/kuberababa" target="_blank" aria-label="Написать в Telegram">
+      <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M9.03 16.87c-.39 0-.32-.15-.45-.53L7.5 12.62l10.5-6.22"/></svg>
+    </a>
+    <a class="fab mail" href="mailto:jobkubera@gmail.com" aria-label="Написать на email">
+      <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M20 8l-8 5-8-5V6l8 5 8-5z"/></svg>
+    </a>
+    <a class="fab tel" href="tel:+3548831950" aria-label="Позвонить">
+      <svg viewBox="0 0 24 24" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.2-.2.5-.3.7-.2 1 .3 2 .5 3 .5.4 0 .7.3.7.7V20c0 .4-.3.7-.7.7A16.6 16.6 0 013.3 4.7c0-.4.3-.7.7-.7h3.8c.4 0 .7.3.7.7 0 1 .2 2 .5 3 .1.2 0 .5-.2.7l-2.2 2.2z"/></svg>
+    </a>
+  </div>
 </body>
 </html>
