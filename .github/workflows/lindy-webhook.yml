@@ -1,19 +1,24 @@
-name: Lindy Webhook Integration
+name: Lindy Webhook Test
 
 on:
   push:
-      branches: [main, master]
+    workflow_dispatch:
 
-      jobs:
-        notify-lindy:
-            runs-on: ubuntu-latest
-                    steps:
-                    - uses: actions/checkout@v4
-                        - name: Send webhook to Lindy
-                              run: |
-                                      echo "Sending webhook to Lindy..."
-                                              curl -X POST \
-                                                        -H "Content-Type: application/json" \
-                                                                  -H "Authorization: Bearer ${{ secrets.LINDY_WEBHOOK_SECRET }}" \
-                                                                            -d '{"event":"${{ github.event_name }}","repository":"${{ github.repository }}","ref":"${{ github.ref }}","sha":"${{ github.sha }}","actor":"${{ github.actor }}"}' \
-                                                                                      "https://webhook.lindy.ai/webhook/${{ secrets.LINDY_WEBHOOK_URL_ID }}" || echo "Webhook completed"
+    jobs:
+      notify-lindy:
+          runs-on: ubuntu-latest
+              steps:
+                    - name: Show context (sanitized)
+                            run: |
+                                      echo "Repo: $GITHUB_REPOSITORY"
+                                                echo "Ref: $GITHUB_REF"
+                                                      - name: POST to Lindy
+                                                              env:
+                                                                        LINDY_WEBHOOK_SECRET: ${{ secrets.LINDY_WEBHOOK_SECRET }}
+                                                                                  LINDY_WEBHOOK_URL_ID: ${{ secrets.LINDY_WEBHOOK_URL_ID }}
+                                                                                          run: |
+                                                                                                    curl -sS -X POST \
+                                                                                                                -H "Authorization: Bearer ${LINDY_WEBHOOK_SECRET}" \
+                                                                                                                            -H "Content-Type: application/json" \
+                                                                                                                                        -d "{\"event\":\"test_push\",\"repository\":\"${GITHUB_REPOSITORY}\",\"sha\":\"${GITHUB_SHA}\"}" \
+                                                                                                                                                    "https://api.lindy.ai/webhooks/${LINDY_WEBHOOK_URL_ID}"
