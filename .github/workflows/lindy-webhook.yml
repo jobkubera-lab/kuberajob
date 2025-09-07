@@ -7,7 +7,7 @@ on:
       jobs:
         notify-lindy:
             runs-on: ubuntu-latest
-                steps:
+                    steps:
                     - uses: actions/checkout@v4
                         - name: Send webhook to Lindy
                               run: |
