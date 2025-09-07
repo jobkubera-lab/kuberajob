@@ -1,0 +1,10 @@
+name: Smoke Test
+on:
+  push:
+    workflow_dispatch:
+    jobs:
+      smoke:
+          runs-on: ubuntu-latest
+              steps:
+                    - name: Simple smoke test
+                            run: echo "Smoke test passed!"
