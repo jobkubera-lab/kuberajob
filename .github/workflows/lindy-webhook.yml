@@ -6,7 +6,7 @@ on:
 
     jobs:
       smoke:
-          runs-on: ubuntu-latest Ts
+          runs-on: ubuntu-latest T
               steps:
                     - name: Simple smoke test
                             run: |
