@@ -3,20 +3,17 @@ name: Lindy Webhook Integration
 on:
   push:
       branches: [main, master]
-        pull_request:
-            branches: [main, master]
 
-            jobs:
-              notify-lindy:
-                  runsname: Lindy Webhook Integration
-
-                  on:
-                    push:
-                        branches: [main, master]
-
-                        jobs:
-                          notify-lindy:
-                              runs-on: ubuntu-latest
-                                  steps:
-                                      - uses: actions/checkout@v4
-                                          - run: echo "Webhook test successful"
+      jobs:
+        notify-lindy:
+            runs-on: ubuntu-latest
+                steps:
+                    - uses: actions/checkout@v4
+                        - name: Send webhook to Lindy
+                              run: |
+                                      echo "Sending webhook to Lindy..."
+                                              curl -X POST \
+                                                        -H "Content-Type: application/json" \
+                                                                  -H "Authorization: Bearer ${{ secrets.LINDY_WEBHOOK_SECRET }}" \
+                                                                            -d '{"event":"${{ github.event_name }}","repository":"${{ github.repository }}","ref":"${{ github.ref }}","sha":"${{ github.sha }}","actor":"${{ github.actor }}"}' \
+                                                                                      "https://webhook.lindy.ai/webhook/${{ secrets.LINDY_WEBHOOK_URL_ID }}" || echo "Webhook completed"
