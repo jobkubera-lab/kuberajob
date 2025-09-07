@@ -1,7 +1,7 @@
 name: Lindy Webhook Integration
 
 on:
-  push:
+    push:
       branches: [ main, master ]
         pull_request:
             branches: [ main, master ]
@@ -9,7 +9,7 @@ on:
             jobs:
               notify-lindy:
                   runs-on: ubuntu-latest
-
+  
                           steps:
                               - name: Checkout code
                                     uses: actions/checkout@v4
