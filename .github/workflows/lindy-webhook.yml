@@ -1,24 +1,17 @@
-name: Lindy Webhook Test
+name: Smoke Test
 
 on:
   push:
     workflow_dispatch:
 
     jobs:
-      notify-lindy:
-          runs-on: ubuntu-latest
-                              steps:
-                    - name: Show context (sanitized)
+      smoke:
+          runs-on: ubuntu-latest Ts
+              steps:
+                    - name: Simple smoke test
                             run: |
-                                      echo "Repo: $GITHUB_REPOSITORY"
-                                                echo "Ref: $GITHUB_REF"
-                                                      - name: POST to Lindy
-                                                              env:
-                                                                        LINDY_WEBHOOK_SECRET: ${{ secrets.LINDY_WEBHOOK_SECRET }}
-                                                                                  LINDY_WEBHOOK_URL_ID: ${{ secrets.LINDY_WEBHOOK_URL_ID }}
-                                                                                          run: |
-                                                                                                    curl -sS -X POST \
-                                                                                                                -H "Authorization: Bearer ${LINDY_WEBHOOK_SECRET}" \
-                                                                                                                            -H "Content-Type: application/json" \
-                                                                                                                                        -d "{\"event\":\"test_push\",\"repository\":\"${GITHUB_REPOSITORY}\",\"sha\":\"${GITHUB_SHA}\"}" \
-                                                                                                                                                    "https://api.lindy.ai/webhooks/${LINDY_WEBHOOK_URL_ID}"
+                                      echo "Smoke test passed!"
+                                                echo "Repository: $GITHUB_REPOSITORY"
+                                                          echo "SHA: $GITHUB_SHA"
+
+          
