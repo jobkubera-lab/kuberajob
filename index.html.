@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kubera Job — международное трудоустройство и миграционные услуги</title>
+  <meta name="description" content="Kubera Job помогает с трудоустройством за границей, визами и миграционными документами.">
+  <link rel="canonical" href="https://www.kuberajob.com/" />
+  <meta property="og:title" content="Kubera Job — работа и миграция">
+  <meta property="og:description" content="Помощь с трудоустройством и миграцией по всему миру.">
+  <meta property="og:url" content="https://www.kuberajob.com/">
+  <meta property="og:type" content="website">
+  <link rel="sitemap" type="application/xml" href="/sitemap.xml">
+  <style>body{font:16px/1.5 system-ui,Arial;margin:40px;max-width:900px}</style>
+</head>
+<body>
+  <h1>Kubera Job</h1>
+  <p>Мы помогаем найти работу за границей и оформить миграционные документы.</p>
+</body>
+</html>
