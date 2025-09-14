@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://jobkubera-lab.github.io/kuberajob/sitemap.xml
+
+Sitemap: https://www.kuberajob.com/sitemap.xml
