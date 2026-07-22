@@ -1,55 +1,118 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kubera Job – миграция и работа</title>
-  <meta name="description" content="Kubera Job – помощь с миграцией и трудоустройством в Европе.">
-  <link rel="stylesheet" href="./assets/styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Бесплатная предварительная оценка переезда в Сербию или Черногорию от Kubera Relocation.">
+  <title>Kubera Relocation — Сербия или Черногория</title>
+  <link rel="stylesheet" href="./relocation/styles.css">
 </head>
 <body>
-
-<header>
-  <nav aria-label="Основная навигация" class="nav">
-    <a href="./index.html" class="logo">KuberaJob</a>
-    <ul class="menu">
-      <li><a href="./index.html" class="active">Главная</a></li>
-      <li><a href="./ru/services.html">Услуги</a></li>
-      <li><a href="./ru/pricing.html">Цены</a></li>
-      <li><a href="./ru/cases.html">Кейсы</a></li>
-      <li><a href="./ru/contact.html">Контакты</a></li>
-    </ul>
-    <div class="lang-switch">
-      <a href="./en/index.html">EN</a>
-    </div>
-  </nav>
+<header class="top">
+  <a class="brand" href="./index.html">KUBERA <span>RELOCATION</span></a>
+  <a class="button ghost" href="#assessment">Начать оценку</a>
 </header>
-
 <main>
   <section class="hero">
-    <h1>Добро пожаловать в Kubera Job</h1>
-    <p>Мы помогаем с визами, ВНЖ и трудоустройством в Европе.</p>
+    <div>
+      <p class="eyebrow">Переезд без хаоса</p>
+      <h1>Сербия или Черногория: получите свой первый план за 5 минут</h1>
+      <p class="lead">Предварительная оценка страны, бюджета и следующих шагов. Без регистрации, бесплатно и без передачи паспортных данных.</p>
+      <a class="button" href="#assessment">Пройти анкету</a>
+    </div>
+    <div class="hero-card">
+      <strong>Что получите</strong>
+      <ul>
+        <li>предварительный выбор страны;</li>
+        <li>оценку финансового запаса;</li>
+        <li>личный чек-лист подготовки;</li>
+        <li>готовую заявку консультанту.</li>
+      </ul>
+    </div>
   </section>
 
-  <section class="info">
-    <h2>Наши услуги</h2>
-    <ul>
-      <li>Проверка работодателей</li>
-      <li>Подготовка документов</li>
-      <li>Запись в визовый центр</li>
-      <li>Сопровождение после въезда</li>
-    </ul>
+  <section class="compare">
+    <article><span>🇷🇸</span><h2>Сербия</h2><p>Подходит тем, кому важны крупные города, деловая среда, транспорт и широкий выбор повседневной инфраструктуры.</p></article>
+    <article><span>🇲🇪</span><h2>Черногория</h2><p>Подходит тем, кому важны море, компактность, спокойный ритм и сезонные возможности в туризме и сервисе.</p></article>
+  </section>
+
+  <section id="assessment" class="panel">
+    <div class="section-head">
+      <p class="eyebrow">Экспресс-диагностика</p>
+      <h2>Расскажите о вашем плане</h2>
+    </div>
+    <form id="relocation-form">
+      <div class="grid">
+        <label>Ваше имя<input name="name" autocomplete="name" required placeholder="Например, Александр"></label>
+        <label>Контакт в Telegram<input name="contact" placeholder="@username"></label>
+        <label>Кто переезжает
+          <select name="household">
+            <option value="1">Один человек</option>
+            <option value="2">Пара</option>
+            <option value="3">Семья с ребёнком</option>
+            <option value="4">Семья 4+ человека</option>
+          </select>
+        </label>
+        <label>Когда планируете
+          <select name="timeline">
+            <option>В течение месяца</option><option>1–3 месяца</option><option>3–6 месяцев</option><option>Пока изучаю</option>
+          </select>
+        </label>
+        <label>Накопления на переезд, €<input name="savings" type="number" min="0" step="100" value="5000"></label>
+        <label>Стабильный доход в месяц, €<input name="income" type="number" min="0" step="50" value="1000"></label>
+        <label>Главный приоритет
+          <select name="priority">
+            <option value="work">Работа и деловая среда</option>
+            <option value="calm">Спокойствие и природа</option>
+            <option value="sea">Море и климат</option>
+            <option value="city">Большой город и инфраструктура</option>
+            <option value="business">Открытие бизнеса</option>
+          </select>
+        </label>
+        <label>Источник дохода
+          <select name="incomeSource">
+            <option>Удалённая работа</option><option>Ищу работу на месте</option><option>Свой бизнес</option><option>Накопления</option><option>Пенсия или иной доход</option>
+          </select>
+        </label>
+      </div>
+      <fieldset>
+        <legend>Что потребуется</legend>
+        <label class="check"><input type="checkbox" name="needs" value="жильё"> Поиск жилья</label>
+        <label class="check"><input type="checkbox" name="needs" value="легализация"> Разбор легализации</label>
+        <label class="check"><input type="checkbox" name="needs" value="работа"> Поиск работы</label>
+        <label class="check"><input type="checkbox" name="needs" value="бизнес"> Открытие бизнеса</label>
+        <label class="check"><input type="checkbox" name="needs" value="питомец"> Переезд с питомцем</label>
+      </fieldset>
+      <label>Важные детали<textarea name="details" rows="4" placeholder="Профессия, город, дети, питомцы, особые обстоятельства"></textarea></label>
+      <button class="button" type="submit">Получить предварительный план</button>
+    </form>
+  </section>
+
+  <section id="result" class="panel result" hidden aria-live="polite">
+    <p class="eyebrow">Ваш результат</p>
+    <h2 id="country-result"></h2>
+    <p id="reason"></p>
+    <div class="score"><span>Финансовая готовность</span><strong id="readiness"></strong></div>
+    <div id="checklist"></div>
+    <p class="notice">Это информационная предварительная оценка, а не юридическое заключение и не гарантия ВНЖ. Перед действиями актуальные требования проверяются по официальным источникам.</p>
+    <div class="actions">
+      <button class="button" id="copy-request" type="button">Скопировать заявку</button>
+      <a class="button telegram" href="https://t.me/KUBERAOMBot" target="_blank" rel="noopener">Написать в Telegram</a>
+    </div>
+    <p id="copy-status" class="small"></p>
+  </section>
+
+  <section class="steps">
+    <h2>Как проходит сопровождение</h2>
+    <ol>
+      <li><strong>Диагностика</strong><span>Проверяем вашу ситуацию, бюджет и цель.</span></li>
+      <li><strong>Дорожная карта</strong><span>Формируем последовательность действий и документов.</span></li>
+      <li><strong>Подготовка</strong><span>Разбираем жильё, маршрут, работу или бизнес.</span></li>
+      <li><strong>Сопровождение</strong><span>Остаёмся на связи по согласованному пакету.</span></li>
+    </ol>
   </section>
 </main>
-
-<footer>
-  <p>© Kubera LLC</p>
-  <ul>
-    <li><a href="https://t.me/yourtelegram" target="_blank">Telegram-канал</a></li>
-    <li><a href="mailto:jobkubera@gmail.com">jobkubera@gmail.com</a></li>
-    <li><a href="tel:+3548831950">+354 883 1950</a></li>
-  </ul>
-</footer>
-
+<footer><strong>Kubera Relocation</strong><span>Информационное и организационное сопровождение переезда</span><a href="mailto:jobkubera@gmail.com">jobkubera@gmail.com</a></footer>
+<script src="./relocation/app.js"></script>
 </body>
 </html>
