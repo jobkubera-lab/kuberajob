@@ -9,21 +9,24 @@ import datetime
 import json
 import sys
 
-def main():
-      """Main function to test webhook integration."""
-      print("🚀 Testing Lindy Webhook Integration")
-      print(f"📅 Timestamp: {datetime.datetime.now().isoformat()}")
-      print(f"🐍 Python version: {sys.version}")
 
-    # Sample webhook payload structure
-      webhook_data = {
-          "event": "push",
-          "repository": "jobkubera-lab/kuberajob",
-          "message": "Testing webhook integration with Lindy",
-          "author": "kubera job",
-          "timestamp": datetime.datetime.now().isoformat(),
-          "status": "success"
-      }
+def main():
+    """Main function to test webhook integration."""
+    print("🚀 Testing Lindy Webhook Integration")
+    print(f"📅 Timestamp: {datetime.datetime.now().isoformat()}")
+    print(f"🐍 Python version: {sys.version}")
+
+    # Sample webhook payload structure.
+    # The repository value keeps the current technical GitHub owner so the
+    # example remains valid until the account username itself is renamed.
+    webhook_data = {
+        "event": "push",
+        "repository": "jobkubera-lab/kuberajob",
+        "message": "Testing webhook integration with Lindy",
+        "author": "KUBERA LAB",
+        "timestamp": datetime.datetime.now().isoformat(),
+        "status": "success",
+    }
 
     print("📦 Sample webhook payload:")
     print(json.dumps(webhook_data, indent=2))
@@ -32,5 +35,6 @@ def main():
     print("🔗 This commit should trigger the GitHub Actions workflow")
     print("📡 The workflow will send this event data to Lindy webhook endpoint")
 
+
 if __name__ == "__main__":
-      main()
+    main()
