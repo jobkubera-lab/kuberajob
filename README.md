@@ -1,7 +1,5 @@
 # KUBERA LAB — Legacy Repository
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](./LICENSE)
-
 This repository contains historical code from an earlier migration and employment services project.
 
 **Status:** Legacy archive and technical reference  
@@ -93,17 +91,11 @@ The GitHub account username is still `jobkubera-lab` for backward compatibility.
 
 ### If you're learning to become an AI engineer
 
-👉 **[Kubera Learning](https://github.com/jobkubera-lab/kubera-learning)** — AI engineer roadmap and intelligence library
+👉 **[Kubera Learning](https://github.com/jobkubera-lab/kubera-learning.)** — AI engineer roadmap and intelligence library
 
 ### If you need migration/visa resources
 
 👉 **[Kubera Visa Playbooks](https://github.com/jobkubera-lab/kubera-visa-playbooks)** — current country guidance
-
----
-
-## License
-
-This repository is licensed under the MIT License. See [LICENSE](./LICENSE) for details.
 
 ---
 
