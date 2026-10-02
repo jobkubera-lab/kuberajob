@@ -26,19 +26,19 @@ This repository **does not represent the current public positioning** of KUBERA 
 **Location:** [github.com/jobkubera-lab/jobkubera-lab](https://github.com/jobkubera-lab/jobkubera-lab)
 
 Current engineering directions:
-- **AI agents and local AI** — sovereign agent kernel, modular design
+- **AI agent systems & assurance** — bounded execution, evidence, permissions and human control
 - **Local intelligence and interactive maps** — geographic data, civic technology
 - **Civic-tech prototypes** — community discovery, service lookup
 - **Automation and practical AI systems** — deterministic validation, evidence trails
 
-### Active flagship projects
+### Current priority projects
 
 | Project | Purpose | Status |
 |---------|---------|--------|
-| [Civic Evidence OS](https://github.com/jobkubera-lab/kubera-improved-website/tree/main/civic-evidence-os) | Source-backed service lookup | Active |
-| [DZAMBALA v0.9.1](https://github.com/jobkubera-lab/jobkubera-lab/tree/main/kubera-lab/innovation-stack) | Agent control layer | Active |
-| [Community Compass v0.2](https://github.com/jobkubera-lab/jobkubera-lab/tree/main/kubera-lab/dzambala-community-compass) | Geographic discovery | Active |
-| [Kubera Guide](https://github.com/jobkubera-lab/jobkubera-lab/tree/main/kubera-lab/kubera-guide-global-mapping) | Field-mapped locations | 1.1M+ views |
+| [KUBERA Agent OS](https://github.com/jobkubera-lab/jobkubera-lab/tree/main/kubera-lab/agent-os) | AI control, assurance and bounded execution | P0 / flagship |
+| [KUBERA TAO LAB](https://github.com/jobkubera-lab/jobkubera-lab/tree/main/kubera-lab/kubera-tao-lab) | ML evaluation discipline | P1 / active research |
+| [KUBERA Real Estate OS](https://github.com/jobkubera-lab/jobkubera-lab/tree/main/kubera-lab/real-estate-os) | Applied product architecture + verified core | P1 |
+| [Tender Intelligence](https://github.com/jobkubera-lab/jobkubera-lab/tree/main/kubera-lab/tender-intelligence) | Evidence-led procurement capability | P2 / applied |
 
 ---
 
