@@ -1,0 +1,35 @@
+name: README Integrity
+
+on:
+  push:
+    paths:
+      - "README.md"
+      - ".github/workflows/readme-integrity.yml"
+  pull_request:
+    paths:
+      - "README.md"
+      - ".github/workflows/readme-integrity.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  readme:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Validate README structure
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          text = Path("README.md").read_text(encoding="utf-8")
+          assert text.startswith("# "), "README must start with an H1"
+          assert "<<<<<<<" not in text and ">>>>>>>" not in text, "merge-conflict markers found"
+          assert len(text.strip()) > 200, "README is unexpectedly empty"
+          print("README integrity: OK")
+          PY
