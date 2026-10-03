@@ -91,7 +91,7 @@ The GitHub account username is still `jobkubera-lab` for backward compatibility.
 
 ### If you're learning to become an AI engineer
 
-👉 **[Kubera Learning](https://github.com/jobkubera-lab/kubera-learning.)** — AI engineer roadmap and intelligence library
+👉 **[Kubera Learning](https://github.com/jobkubera-lab/kubera-learning)** — AI engineer roadmap and intelligence library
 
 ### If you need migration/visa resources
 
